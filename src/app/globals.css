@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+
+  --ds-bg: #f4f2ee;
+  --ds-text: #16151a;
+  --ds-accent: #6366f1;
+  --ds-surface: #ffffff;
+  --ds-surface-tint: rgba(99, 102, 241, 0.08);
+  --ds-border-color: rgba(22, 21, 26, 0.07);
+  --ds-border: 1px solid var(--ds-border-color);
+  --ds-muted: rgba(22, 21, 26, 0.4);
+  --ds-subtle: rgba(22, 21, 26, 0.55);
+  --ds-btn-bg: #16151a;
+  --ds-btn-text: #f4f2ee;
+
+  --ds-radius-card: 28px;
+  --ds-radius-tile: 24px;
+  --ds-entrance-duration: 0.6s;
+  --ds-entrance-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --ds-bg: #121114;
+    --ds-text: #f4f2ee;
+    --ds-accent: #818cf8;
+    --ds-surface: #1c1b20;
+    --ds-surface-tint: rgba(129, 140, 248, 0.14);
+    --ds-border-color: rgba(244, 242, 238, 0.09);
+    --ds-muted: rgba(244, 242, 238, 0.4);
+    --ds-subtle: rgba(244, 242, 238, 0.58);
+    --ds-btn-bg: #f4f2ee;
+    --ds-btn-text: #16151a;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --ds-bg: #121114;
+  --ds-text: #f4f2ee;
+  --ds-accent: #818cf8;
+  --ds-surface: #1c1b20;
+  --ds-surface-tint: rgba(129, 140, 248, 0.14);
+  --ds-border-color: rgba(244, 242, 238, 0.09);
+  --ds-muted: rgba(244, 242, 238, 0.4);
+  --ds-subtle: rgba(244, 242, 238, 0.58);
+  --ds-btn-bg: #f4f2ee;
+  --ds-btn-text: #16151a;
+}
+
+body {
+  background: var(--ds-bg);
+  color: var(--ds-text);
+  @apply antialiased;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+::selection {
+  background: var(--ds-surface-tint);
+  color: var(--ds-text);
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-shell px-5 md:px-8;
+  }
+
+  .card {
+    background: var(--ds-surface);
+    border: var(--ds-border);
+    border-radius: var(--ds-radius-card);
+    transition: background-color 200ms ease, border-color 200ms ease;
+  }
+
+  .card-tint {
+    background: var(--ds-surface-tint);
+  }
+
+  .card-dark {
+    background: #000;
+  }
+
+  .tile {
+    background: var(--ds-surface);
+    border: var(--ds-border);
+    border-radius: var(--ds-radius-tile);
+    transition: background-color 200ms ease, border-color 200ms ease;
+  }
+
+  .tile-tint {
+    background: var(--ds-surface-tint);
+  }
+
+  .label {
+    @apply text-[11px] uppercase tracking-[0.16em];
+    color: var(--ds-muted);
+  }
+
+  .label-sm {
+    @apply text-[10.5px] uppercase tracking-[0.16em];
+    color: var(--ds-muted);
+  }
+
+  .badge {
+    @apply rounded-full px-2 py-1 text-[10.5px] uppercase tracking-[0.16em];
+    background: var(--ds-surface-tint);
+    color: var(--ds-text);
+  }
+
+  .badge-on-dark {
+    @apply rounded-full px-2 py-1 text-[10.5px] uppercase tracking-[0.16em];
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full px-6 py-3 text-[15px] font-medium;
+    @apply transition-transform hover:-translate-y-0.5;
+    background: var(--ds-btn-bg);
+    color: var(--ds-btn-text);
+  }
+
+  .on-media {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .on-media-strong {
+    color: #fff;
+  }
+
+  .theme-toggle {
+    @apply fixed right-4 top-4 z-50 inline-flex h-9 items-center gap-2 rounded-full px-3 text-[12px];
+    @apply md:right-8 md:top-6;
+    background: var(--ds-surface);
+    border: var(--ds-border);
+    color: var(--ds-text);
+    backdrop-filter: blur(8px);
+    transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+  }
+}
+
+@layer utilities {
+  .text-muted {
+    color: var(--ds-muted);
+  }
+
+  .text-subtle {
+    color: var(--ds-subtle);
+  }
+
+  .t-hero {
+    font-size: clamp(2.25rem, 6.5vw, 4.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+  }
+
+  .t-h2 {
+    font-size: clamp(1.625rem, 3.6vw, 2.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    font-weight: 600;
+  }
+
+  .t-h2-about {
+    font-size: clamp(1.625rem, 3.6vw, 2.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+
+  .t-card-title {
+    font-size: 1.375rem;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+
+  .t-tile-value {
+    font-size: 1.375rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-y, 12px)) scale(var(--reveal-scale, 1));
+  transition: opacity var(--ds-entrance-duration) var(--ds-entrance-ease),
+    transform var(--ds-entrance-duration) var(--ds-entrance-ease);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
