@@ -17,7 +17,7 @@ export function About() {
           <div className="label mb-3">Core expertise</div>
           <ul className="space-y-2.5">
             {coreExpertise.map((item) => (
-              <li key={item} className="flex items-baseline gap-2.5 text-[15px] text-ink">
+              <li key={item} className="flex items-baseline gap-2.5 text-[16.5px] font-semibold text-ink">
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                 {item}
               </li>
