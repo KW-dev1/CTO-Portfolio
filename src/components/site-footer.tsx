@@ -9,7 +9,7 @@ const links = [
 
 export function SiteFooter() {
   return (
-    <section id="contact" className="w-full py-12">
+    <section id="contact" className="w-full py-8 md:py-12">
       <div className="shell grid gap-3 md:gap-4 lg:grid-cols-3">
         <Reveal className="card card-tint flex flex-col justify-between rounded-[28px] p-8 md:p-10 lg:col-span-2">
           <div>

@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
-import { about, profile } from "@/content/data";
+import { executiveSummary, profile } from "@/content/data";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", variable: "--font-serif" });
 
 export const metadata: Metadata = {
-  title: `${profile.name} — ${profile.title}`,
-  description: about.body,
+  title: `${profile.name} | ${profile.title}`,
+  description: executiveSummary,
 };
 
 const noFlash = `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light"){document.documentElement.dataset.theme=t}}catch(e){}})();`;

@@ -1,46 +1,192 @@
 export const profile = {
   name: "Kenneth Webber",
   title: "Senior AI & Full-Stack Engineer",
-  subtitle: "Tech Lead & Co-Founder",
+  subtitle: "Tech Lead",
   location: "Louisiana, USA",
-  timezone: "GMT-6",
-  availability: "Open to remote",
-  availabilityEyebrow: "AVAILABLE · REMOTE ROLES",
-  yearsExperience: 23,
+  availability: "Open to Remote",
+  yearsLabel: "21+ Years of Experience",
+  years: "21+",
+  yearsCaption: "Years of Experience",
   email: "hello@kennethwebber.dev",
   linkedin: "https://www.linkedin.com/in/kenneth-webber-a16032423/",
   github: "https://github.com/kw-dev1",
-  building: "A unified content-AI gateway that cuts vendor spend 30–50%.",
 };
 
-export const about = {
-  headline: "I build the systems other engineers build on top of.",
-  body: "22+ years writing production software, most of it backend and infrastructure work that nobody sees until it breaks. I've been the founding engineer, the tech lead, and the person paged at 2am — usually all three at once. These days that means agentic AI systems, API gateways, and the unglamorous plumbing that makes the flashy parts of a product actually work.",
-};
+export const executiveSummary =
+  "Tech Lead and Senior AI Engineer with over 21 years of experience designing, building, and scaling resilient full-stack applications and intelligent AI architectures. Proven track record of driving multi-million-dollar financial impact for early-stage startups and enterprise organizations alike. Expertise spans agentic systems, content-AI API infrastructure, generative AI, event-driven backend systems, and high-performance frontend interfaces.";
 
-export const quote = {
-  text: "The best infrastructure is the kind nobody has to think about.",
-  attribution: "— a principle earned the hard way, on-call",
-};
-
-export const stats: { value: string; unit: string; label: string }[] = [
-  { value: "23+", unit: "yrs", label: "Years shipping" },
+export const coreExpertise: string[] = [
+  "Agentic AI Systems",
+  "API Gateway Architecture",
+  "Distributed Backend Systems",
+  "Modern Frontend Architecture",
+  "Cloud Infrastructure",
+  "Technical Leadership",
 ];
 
-export const currentRole = {
-  company: "withConflux",
-  url: "https://withconflux.com",
-  role: "Co-Founder & Lead AI/Infrastructure Engineer",
-  period: "Aug 2026 – Present",
-  location: "Remote",
-  product: "Unified Content-AI Gateway and Smart Routing Platform",
-  bullets: [
-    "Co-founded and architected withConflux, a high-concurrency API gateway built in TypeScript, Go, and Redis to aggregate and route requests across content-AI providers.",
-    "Engineered a content-hash deduplication engine and smart router that reduces client vendor costs by 30–50% through automated caching and real-time cost and health evaluation of providers.",
-    "Designed a developer console in Next.js (App Router), Tailwind CSS, and TanStack Query, featuring real-time telemetry dashboards, interactive API key management, and configurable spend-cap controls.",
-    "Architected multi-provider failover logic and unified SDKs supporting managed subscriptions and enterprise Bring-Your-Own-Key (BYOK) configurations.",
-  ],
+export type StackGroup = { label: string; items: string };
+
+export const technicalStack: StackGroup[] = [
+  {
+    label: "Languages",
+    items: "TypeScript, JavaScript, Python, Go, SQL, C#/.NET",
+  },
+  {
+    label: "Frontend",
+    items:
+      "React, Next.js, Vue, Svelte, Tailwind CSS, Zustand, Redux Toolkit, TanStack Query, WebSockets",
+  },
+  {
+    label: "Backend",
+    items:
+      "Node.js, NestJS, Express.js, Django, FastAPI, .NET, REST, GraphQL, gRPC, AWS Lambda",
+  },
+  {
+    label: "Databases & Data",
+    items: "PostgreSQL, MySQL, Redis, MongoDB, Pinecone, Qdrant, Supabase, Prisma",
+  },
+  {
+    label: "AI & LLM",
+    items:
+      "LangChain, LlamaIndex, OpenAI & Anthropic APIs, PyTorch, Hugging Face, RAG, vector databases, function calling/tool use",
+  },
+  {
+    label: "Cloud & Infrastructure",
+    items: "AWS, GCP, Docker, Kubernetes, Terraform, Cloudflare, GitHub Actions, Datadog, Sentry",
+  },
+  {
+    label: "Testing",
+    items: "Jest, Vitest, Cypress, Playwright, PyTest",
+  },
+];
+
+export type Role = {
+  slug: string;
+  title: string;
+  company: string;
+  initial: string;
+  period: string;
+  duration: string;
+  product: string;
+  bullets: string[];
 };
+
+export const experience: Role[] = [
+  {
+    slug: "breezy-software",
+    title: "Lead AI / Staff Software Engineer",
+    company: "Breezy Software Inc.",
+    initial: "B",
+    period: "Sep 2023 – Jun 2026",
+    duration: "2 yrs 10 mos",
+    product: "Intelligent Applicant Tracking and Candidate Evaluation Platform",
+    bullets: [
+      "Led the technical architecture and end-to-end engineering of Breezy Intelligence, an AI-powered intelligence layer embedded within a production recruiting platform used to augment candidate evaluation and recruiter decision-making.",
+      "Architected scalable LLM-powered pipelines for candidate intelligence, combining resume parsing, structured candidate data, job requirements, and recruiting activity to generate contextual applicant insights and recommendations.",
+      "Designed agentic AI workflows with structured outputs, validation, orchestration, and human-in-the-loop controls, transforming unstructured candidate data into reliable signals consumable directly by recruiting workflows.",
+      "Engineered AI-powered resume intelligence to audit candidate materials, identify inconsistencies and anomalous patterns, and surface potential indicators of AI-generated or suspicious applications for recruiter review.",
+      "Built contextual summarization systems synthesizing resumes, candidate profiles, recruiter notes, communications, and activity history into concise, decision-ready intelligence for recruiters and hiring managers.",
+      "Architected asynchronous processing, API integrations, observability, fault-tolerant workflows, and data-validation layers to reliably operate AI workloads within a high-volume SaaS environment.",
+      "Drove engineering decisions across AI infrastructure, backend services, data pipelines, security, scalability, and production reliability, balancing model capabilities with latency, cost, accuracy, and operational constraints.",
+      "Partnered cross-functionally with product and engineering stakeholders to translate recruiting-domain requirements into production-grade AI capabilities, establishing the technical foundation for continued expansion of intelligent recruiting features.",
+    ],
+  },
+  {
+    slug: "carvana",
+    title: "Senior Full-Stack Engineer (Contract)",
+    company: "Carvana",
+    initial: "C",
+    period: "Oct 2020 – Sep 2023",
+    duration: "3 yrs",
+    product: "Automotive Commerce, Valuation, and Logistics Platform",
+    bullets: [
+      "Drove the architecture and production integration of classical ML and modern LLM capabilities across consumer experiences and backend fulfillment systems, contributing to $22.9M/year in measurable business impact.",
+      "Architected a distributed last-mile scheduling platform using Python, Go, and Redis, optimizing driver routing, transportation schedules, network capacity, and resource utilization while reducing logistics expenses by $900K/year.",
+      "Designed backend services and data pipelines connecting vehicle inventory, customer demand, pricing, purchasing, fulfillment, and logistics, enabling data-driven decisioning across a high-volume automotive commerce platform.",
+      "Engineered resilient asynchronous workflows and service integrations using event-driven processing, idempotency, retries, validation, and observability to support reliable, high-throughput fulfillment operations.",
+      "Built and integrated ML-driven vehicle intelligence capabilities spanning valuation, recommendations, personalization, and inventory optimization, leveraging large-scale vehicle and transaction datasets.",
+      "Led cross-functional technical initiatives spanning backend architecture, distributed systems, AI/ML integration, data infrastructure, and logistics optimization, balancing performance, scalability, reliability, model accuracy, and business impact.",
+    ],
+  },
+  {
+    slug: "susco-solutions",
+    title: "Senior Full-Stack Engineer",
+    company: "Susco Solutions",
+    initial: "S",
+    period: "Nov 2016 – Sep 2020",
+    duration: "3 yrs 11 mos",
+    product: "Claims Management & Insurance Operations Platform",
+    bullets: [
+      "Contributed to SuscoCMS, building scalable claims-management workflows, APIs, integrations, and business applications using Python, JavaScript, PostgreSQL, Redis, and AWS.",
+      "Architected backend services, data models, REST APIs, and automated workflows supporting claims processing, billing, adjuster management, and insurance operations.",
+      "Led the Gilsbar Insurance engagement, replacing the legacy Vertafore Sagitta platform with custom accounting software and migrating critical business data.",
+      "Designed data migration and integration workflows while ensuring data integrity, reliability, and production continuity.",
+      "Partnered directly with client stakeholders to lead technical implementation from requirements through production.",
+      "Delivered a system replacement that generated $348K in reported annual cost savings for Gilsbar Insurance.",
+    ],
+  },
+  {
+    slug: "levelset",
+    title: "Senior Full-Stack Developer",
+    company: "Levelset (acquired by Procore)",
+    initial: "L",
+    period: "Jan 2014 – Oct 2016",
+    duration: "2 yrs 10 mos",
+    product: "Construction Lien Rights & Payment Management Platform",
+    bullets: [
+      "Contributed to the development of Levelset’s core construction payment platform using Python, Django, JavaScript/jQuery, PostgreSQL, Redis, and AWS.",
+      "Built full-stack workflows for lien notices, lien waivers, payment tracking, document processing, and compliance deadlines.",
+      "Developed scalable backend services, APIs, database models, and automated workflows supporting construction payment operations.",
+      "Optimized application performance through PostgreSQL query optimization, Redis caching/background processing, and AWS infrastructure.",
+    ],
+  },
+  {
+    slug: "general-informatics",
+    title: "Senior Systems & Software Engineer",
+    company: "General Informatics",
+    initial: "G",
+    period: "Mar 2010 – Dec 2013",
+    duration: "3 yrs 10 mos",
+    product: "Managed IT, Infrastructure & Custom Software Solutions",
+    bullets: [
+      "Led custom web application development and database modernization using C#/.NET, ASP.NET, and SQL Server for enterprise and public-sector clients.",
+      "Architected RESTful services and data portals supporting high-volume operational workflows and geographically distributed users.",
+      "Designed cloud and infrastructure modernization solutions, migrating legacy systems and databases to more scalable environments.",
+      "Developed database-driven applications, integrations, and internal platforms that streamlined client operations and reduced infrastructure complexity.",
+      "Partnered with clients to translate business and technical requirements into production-ready software and infrastructure solutions.",
+    ],
+  },
+  {
+    slug: "endertech",
+    title: "Full-Stack Software Engineer",
+    company: "Endertech",
+    initial: "E",
+    period: "Aug 2007 – Feb 2010",
+    duration: "2 yrs 7 mos",
+    product: "Custom Software, E-Commerce & Web Application Development",
+    bullets: [
+      "Built custom web applications and e-commerce platforms using PHP, JavaScript, HTML/CSS, and MySQL.",
+      "Developed backend business logic, database-driven features, customer portals, and administrative tools for client applications.",
+      "Designed and integrated APIs and third-party services to automate business workflows and connect external systems.",
+      "Optimized database queries and application performance while troubleshooting production issues across client platforms.",
+      "Managed end-to-end development, testing, deployment, and ongoing maintenance of web applications.",
+    ],
+  },
+  {
+    slug: "infotech-solutions",
+    title: "Software Engineer",
+    company: "InfoTECH Solutions",
+    initial: "I",
+    period: "Jun 2005 – Jul 2007",
+    duration: "2 yrs 2 mos",
+    product: "Managed IT Infrastructure & Business Technology Solutions",
+    bullets: [
+      "Developed internal tracking dashboards and automation tools using C#, SQL Server, and JavaScript to streamline IT operations.",
+      "Built custom scripts and integrations for network monitoring, log processing, infrastructure tracking, and uptime reporting.",
+      "Automated operational tasks and data collection to improve infrastructure visibility and reduce manual IT administration.",
+    ],
+  },
+];
 
 export type WorkMetric = { value: string; label: string };
 
@@ -206,110 +352,8 @@ export const selectedWork: WorkItem[] = [
   },
 ];
 
-export type SkillCategory = { title: string; caption: string; items: string[] };
-
-export const skillCategories: SkillCategory[] = [
-  {
-    title: "Languages",
-    caption: "Daily drivers",
-    items: ["TypeScript", "Python", "Go", "Rust", "SQL", "C#"],
-  },
-  {
-    title: "Frontend",
-    caption: "Most of my screen time",
-    items: ["React", "Next.js", "Tailwind CSS", "TanStack Query"],
-  },
-  {
-    title: "Backend & data",
-    caption: "Where the systems live",
-    items: ["Node.js", "NestJS", "FastAPI", "PostgreSQL", "Redis"],
-  },
-  {
-    title: "AI & agentic frameworks",
-    caption: "What I ship on today",
-    items: ["LangChain", "OpenAI & Anthropic APIs", "RAG", "Tool use"],
-  },
-  {
-    title: "Cloud & infrastructure",
-    caption: "Where it all deploys",
-    items: ["AWS", "Docker", "Kubernetes", "Terraform"],
-  },
-  {
-    title: "Testing & quality",
-    caption: "Confidence before shipping",
-    items: ["Playwright", "Vitest", "PyTest"],
-  },
-];
-
-export type ExperienceEntry = {
-  company: string;
-  initial: string;
-  role: string;
-  period: string;
-  highlight: string;
-};
-
-export const experience: ExperienceEntry[] = [
-  {
-    company: "Breezy Software Inc.",
-    initial: "B",
-    role: "AI Product Engineer",
-    period: "Sep 2023 – Jun 2026",
-    highlight: "Sole founding engineer; grew company valuation from $4M to $15M in 9 months.",
-  },
-  {
-    company: "Carvana",
-    initial: "C",
-    role: "AI Engineer (Contract)",
-    period: "Oct 2020 – Sep 2023",
-    highlight: "ML and LLM integrations across the platform contributed $22.9M/year in business impact.",
-  },
-  {
-    company: "Susco Solutions",
-    initial: "S",
-    role: "Tech Lead & Principal Full-Stack Engineer",
-    period: "Nov 2016 – Sep 2020",
-    highlight: "Led a team of 10+ engineers; cut production defect rates by 40% with CI/CD and typing standards.",
-  },
-  {
-    company: "Levelset (acquired by Procore)",
-    initial: "L",
-    role: "Senior Full-Stack Developer",
-    period: "Jan 2014 – Oct 2016",
-    highlight: "Sped up legal document processing by 60% through indexing and async task queuing.",
-  },
-  {
-    company: "General Informatics",
-    initial: "G",
-    role: "Senior Systems & Software Engineer",
-    period: "Mar 2010 – Dec 2013",
-    highlight: "Cut client infrastructure costs 30% through legacy consolidation and containerized deployments.",
-  },
-  {
-    company: "LookFar Labs",
-    initial: "L",
-    role: "Full-Stack Software Engineer",
-    period: "Aug 2007 – Feb 2010",
-    highlight: "Built MVPs directly with startup founders, from domain modeling to production deploy.",
-  },
-  {
-    company: "InfoTECH Solutions",
-    initial: "I",
-    role: "Software Engineer",
-    period: "Jun 2005 – Jul 2007",
-    highlight: "Built internal tracking dashboards and network log monitoring automation.",
-  },
-  {
-    company: "S1 Technology",
-    initial: "S",
-    role: "Junior Web Developer",
-    period: "Jun 2003 – May 2005",
-    highlight: "First engineering role — responsive forms and admin tooling across client software installs.",
-  },
-];
-
 export const education = {
+  degree: "Bachelor of Science in Systems Engineering",
   school: "Thomas Edison State University",
-  degree: "B.S. in Systems Engineering",
   period: "1999 – 2003",
 };

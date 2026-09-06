@@ -14,7 +14,7 @@ const SPANS = [
 
 export function SelectedWork() {
   return (
-    <section id="work" className="w-full py-12">
+    <section id="work" className="w-full py-8 md:py-12">
       <div className="shell">
         <div className="label mb-3">Selected work</div>
         <h2 className="t-h2 mb-8">Systems that moved the needle.</h2>

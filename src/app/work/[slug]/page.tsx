@@ -29,7 +29,7 @@ export default async function WorkDetail({ params }: Params) {
 
   return (
     <main>
-      <section className="w-full py-20">
+      <section className="w-full py-10 md:py-20">
         <div className="shell">
           <Link
             href="/#work"
@@ -39,7 +39,7 @@ export default async function WorkDetail({ params }: Params) {
             <span className="underline-offset-[6px] group-hover:underline">All work</span>
           </Link>
 
-          <div className="grid grid-cols-6 auto-rows-[110px] md:auto-rows-[140px] gap-3 md:gap-4">
+          <div className="grid grid-cols-6 auto-rows-[92px] md:auto-rows-[140px] gap-3 md:gap-4">
             <Reveal
               y={16}
               scale={0.97}
@@ -110,7 +110,7 @@ export default async function WorkDetail({ params }: Params) {
         </div>
       </section>
 
-      <section className="w-full py-12">
+      <section className="w-full py-8 md:py-12">
         <div className="shell grid gap-3 md:gap-4 lg:grid-cols-3">
           <Reveal className="card lg:col-span-2 rounded-[28px] p-7 md:p-9">
             <div className="label mb-3">Overview</div>
@@ -134,7 +134,7 @@ export default async function WorkDetail({ params }: Params) {
         </div>
       </section>
 
-      <section className="w-full py-12">
+      <section className="w-full py-8 md:py-12">
         <div className="shell">
           <div className="label mb-3">What I built</div>
           <h2 className="t-h2 mb-8">The work behind the number</h2>
@@ -157,7 +157,7 @@ export default async function WorkDetail({ params }: Params) {
         </div>
       </section>
 
-      <section className="w-full py-12">
+      <section className="w-full py-8 md:py-12">
         <div className="shell">
           <div className="label mb-3">Stack</div>
           <h2 className="t-h2 mb-8">What it runs on</h2>
@@ -177,7 +177,7 @@ export default async function WorkDetail({ params }: Params) {
         </div>
       </section>
 
-      <section className="w-full py-12">
+      <section className="w-full py-8 md:py-12">
         <div className="shell grid gap-3 md:gap-4 lg:grid-cols-2">
           {[
             { dir: "Previous", item: prev, arrow: "←" },
