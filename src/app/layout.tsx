@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
-import { executiveSummary, profile } from "@/content/data";
+import { aboutBody, profile } from "@/content/data";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -9,7 +9,7 @@ const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", variable: "-
 
 export const metadata: Metadata = {
   title: `${profile.name} | ${profile.title}`,
-  description: executiveSummary,
+  description: aboutBody.join(" "),
 };
 
 const noFlash = `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light"){document.documentElement.dataset.theme=t}}catch(e){}})();`;

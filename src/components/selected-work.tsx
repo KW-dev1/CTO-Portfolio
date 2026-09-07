@@ -53,16 +53,20 @@ export function SelectedWork() {
                   />
                 )}
 
-                <div className="relative flex items-start justify-between">
-                  <span className={item.featured ? "badge-on-dark" : "badge"}>{item.tag}</span>
+                <div className="relative flex items-start justify-end">
                   <span className={`text-[11px] ${item.featured ? "on-media" : "text-subtle"}`}>
                     {item.metric}
                   </span>
                 </div>
 
                 <div className="relative">
+                  <span
+                    className={`inline-flex ${item.featured ? "badge-on-dark" : "badge"}`}
+                  >
+                    {item.tag}
+                  </span>
                   <div
-                    className={`t-card-title underline-offset-[6px] group-hover:underline ${
+                    className={`t-card-title mt-2.5 underline-offset-[6px] group-hover:underline ${
                       item.featured ? "on-media-strong" : "text-ink"
                     }`}
                   >

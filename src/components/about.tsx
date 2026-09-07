@@ -1,4 +1,4 @@
-import { coreExpertise, executiveSummary } from "@/content/data";
+import { aboutBody, quote } from "@/content/data";
 import { Reveal } from "@/components/reveal";
 
 export function About() {
@@ -7,22 +7,20 @@ export function About() {
       <div className="shell grid gap-3 md:gap-4 lg:grid-cols-3">
         <Reveal className="card lg:col-span-2 rounded-[28px] p-7 md:p-9">
           <div className="label mb-3">About</div>
-          <p className="text-[1.0625rem] leading-[1.7] text-subtle">{executiveSummary}</p>
+          <div className="space-y-4 text-[1.0625rem] leading-[1.7] text-subtle">
+            {aboutBody.map((para) => (
+              <p key={para}>{para}</p>
+            ))}
+          </div>
         </Reveal>
 
         <Reveal
           delay={100}
           className="card card-tint flex flex-col justify-between rounded-[28px] p-7 md:p-9"
         >
-          <div className="label mb-3">Core expertise</div>
-          <ul className="space-y-2.5">
-            {coreExpertise.map((item) => (
-              <li key={item} className="flex items-baseline gap-2.5 text-[16.5px] font-semibold text-ink">
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                {item}
-              </li>
-            ))}
-          </ul>
+          <div className="font-serif text-[2.25rem] leading-[0.9] text-accent">&#10077;</div>
+          <p className="font-serif text-[1.125rem] leading-snug text-ink">{quote}</p>
+          <div />
         </Reveal>
       </div>
     </section>

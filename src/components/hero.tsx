@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { coreExpertise, profile } from "@/content/data";
+import { profile, selectedWork } from "@/content/data";
 import { Reveal } from "@/components/reveal";
 
 export function Hero() {
@@ -62,8 +62,13 @@ export function Hero() {
           delay={300}
           className="card card-tint col-span-3 md:col-span-2 row-span-2 flex flex-col justify-between overflow-hidden p-5"
         >
-          <div className="label">Focus</div>
-          <div className="text-[15px] leading-snug text-ink">{coreExpertise[0]}</div>
+          <div className="label">Building</div>
+          <div>
+            <div className="text-[1.5rem] font-medium tracking-[-0.02em]">
+              {selectedWork[0].title}
+            </div>
+            <div className="mt-0.5 text-[12px] text-subtle">{selectedWork[0].metric}</div>
+          </div>
         </Reveal>
 
         <Reveal

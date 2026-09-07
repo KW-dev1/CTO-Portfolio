@@ -37,7 +37,15 @@ export function ExperienceTimeline() {
                   </div>
                 </div>
 
-                <ul className="mt-5 space-y-2.5 border-t border-hairline pt-5">
+                <div className="mt-5 flex flex-wrap gap-1.5 border-t border-hairline pt-5">
+                  {role.skills.map((skill) => (
+                    <span key={skill} className="badge">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+
+                <ul className="mt-5 space-y-2.5">
                   {role.bullets.map((line) => (
                     <li key={line} className="flex gap-3">
                       <span className="mt-[0.5em] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />

@@ -120,16 +120,14 @@ export default async function WorkDetail({ params }: Params) {
 
           <Reveal delay={100} className="card card-tint flex flex-col justify-between rounded-[28px] p-7 md:p-9">
             <div className="label mb-3">By the numbers</div>
-            <div className="space-y-5">
+            <ul className="space-y-3">
               {item.metrics.map((m) => (
-                <div key={m.label}>
-                  <div className="text-[2rem] font-medium leading-none tracking-[-0.025em] text-ink">
-                    {m.value}
-                  </div>
-                  <div className="mt-1 text-[12px] text-subtle">{m.label}</div>
-                </div>
+                <li key={m} className="flex gap-2.5 text-[15px] leading-[1.5] text-ink">
+                  <span className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                  <span>{m}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </Reveal>
         </div>
       </section>

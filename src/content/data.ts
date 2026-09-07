@@ -12,17 +12,13 @@ export const profile = {
   github: "https://github.com/kw-dev1",
 };
 
-export const executiveSummary =
-  "Tech Lead and Senior AI Engineer with over 21 years of experience designing, building, and scaling resilient full-stack applications and intelligent AI architectures. Proven track record of driving multi-million-dollar financial impact for early-stage startups and enterprise organizations alike. Expertise spans agentic systems, content-AI API infrastructure, generative AI, event-driven backend systems, and high-performance frontend interfaces.";
-
-export const coreExpertise: string[] = [
-  "Agentic AI Systems",
-  "API Gateway Architecture",
-  "Distributed Backend Systems",
-  "Modern Frontend Architecture",
-  "Cloud Infrastructure",
-  "Technical Leadership",
+export const aboutBody: string[] = [
+  "I’ve spent 21 years fixing the problems no one wants to own.",
+  "Legacy platforms nobody wants to touch. AI features that work in the demo but not in production. Logistics systems quietly bleeding money. I’ve rebuilt all three — and I’m currently building something of my own, because I got tired of just fixing other people’s.",
 ];
+
+export const quote =
+  "Most engineers can write code. Fewer can tell you which code is actually worth writing.";
 
 export type StackGroup = { label: string; items: string };
 
@@ -54,10 +50,6 @@ export const technicalStack: StackGroup[] = [
     label: "Cloud & Infrastructure",
     items: "AWS, GCP, Docker, Kubernetes, Terraform, Cloudflare, GitHub Actions, Datadog, Sentry",
   },
-  {
-    label: "Testing",
-    items: "Jest, Vitest, Cypress, Playwright, PyTest",
-  },
 ];
 
 export type Role = {
@@ -68,27 +60,33 @@ export type Role = {
   period: string;
   duration: string;
   product: string;
+  skills: string[];
   bullets: string[];
 };
 
 export const experience: Role[] = [
   {
-    slug: "breezy-software",
-    title: "Lead AI / Staff Software Engineer",
-    company: "Breezy Software Inc.",
+    slug: "breezy-hr",
+    title: "Lead AI / Senior Software Engineer",
+    company: "Breezy HR, Inc.",
     initial: "B",
     period: "Sep 2023 – Jun 2026",
     duration: "2 yrs 10 mos",
     product: "Intelligent Applicant Tracking and Candidate Evaluation Platform",
+    skills: ["AWS Bedrock", "Node.js Microservices", "WebSockets (Socket.io)", "BullMQ", "SNS", "MongoDB", "LLM Pipelines", "AvaTax", "Stripe", "GDPR/CCPA Compliance"],
     bullets: [
       "Led the technical architecture and end-to-end engineering of Breezy Intelligence, an AI-powered intelligence layer embedded within a production recruiting platform used to augment candidate evaluation and recruiter decision-making.",
-      "Architected scalable LLM-powered pipelines for candidate intelligence, combining resume parsing, structured candidate data, job requirements, and recruiting activity to generate contextual applicant insights and recommendations.",
-      "Designed agentic AI workflows with structured outputs, validation, orchestration, and human-in-the-loop controls, transforming unstructured candidate data into reliable signals consumable directly by recruiting workflows.",
+      "Architected and shipped an AI-powered candidate sourcing feature on AWS Bedrock that ranks best-fit candidates from large applicant datasets, supports credit-aware execution, and streams real-time progress via WebSockets.",
+      "Optimized the sourcing pipeline's LLM usage, reducing per-run inference cost by 90% while improving match quality through a multi-stage scoring and reranking pipeline.",
+      "Traced and fixed cross-service failures across 6 Node.js microservices and async pipelines (SNS, BullMQ, Socket.io, MongoDB), eliminating recurring errors in the sourcing workflow.",
       "Engineered AI-powered resume intelligence to audit candidate materials, identify inconsistencies and anomalous patterns, and surface potential indicators of AI-generated or suspicious applications for recruiter review.",
-      "Built contextual summarization systems synthesizing resumes, candidate profiles, recruiter notes, communications, and activity history into concise, decision-ready intelligence for recruiters and hiring managers.",
-      "Architected asynchronous processing, API integrations, observability, fault-tolerant workflows, and data-validation layers to reliably operate AI workloads within a high-volume SaaS environment.",
+      "Built contextual summarization systems that synthesized resumes, candidate profiles, recruiter notes, communications, and activity history into concise, decision-ready intelligence for recruiters and hiring managers.",
+      "Migrated the image delivery/optimization stack (DNS cutover, URL rewrites, application changes), cutting monthly image infrastructure spend by approximately 97%.",
+      "Implemented AvaTax-based tax collection across state tax codes, integrating with Stripe for accurate checkout and invoicing.",
+      "Audited and corrected GDPR/CCPA consent workflows across candidate import paths, ensuring data privacy compliance across US and EU regions.",
+      "Contributed to a broad platform feature set — job postings, candidate management, applications, email/SMS communication, automation, scheduling, scoring, video interviews, reporting, and dozens of third-party API integrations — across the recruiting platform.",
       "Drove engineering decisions across AI infrastructure, backend services, data pipelines, security, scalability, and production reliability, balancing model capabilities with latency, cost, accuracy, and operational constraints.",
-      "Partnered cross-functionally with product and engineering stakeholders to translate recruiting-domain requirements into production-grade AI capabilities, establishing the technical foundation for continued expansion of intelligent recruiting features.",
+      "Partnered cross-functionally with product and engineering stakeholders to translate recruiting-domain requirements into production-grade AI capabilities while establishing the technical foundation for continued expansion of intelligent recruiting features.",
     ],
   },
   {
@@ -99,6 +97,7 @@ export const experience: Role[] = [
     period: "Oct 2020 – Sep 2023",
     duration: "3 yrs",
     product: "Automotive Commerce, Valuation, and Logistics Platform",
+    skills: ["Python", "Go", "Redis", "Classical ML", "LLM Integration", "Distributed Systems", "Event-Driven Processing", "Data Pipelines"],
     bullets: [
       "Drove the architecture and production integration of classical ML and modern LLM capabilities across consumer experiences and backend fulfillment systems, contributing to $22.9M/year in measurable business impact.",
       "Architected a distributed last-mile scheduling platform using Python, Go, and Redis, optimizing driver routing, transportation schedules, network capacity, and resource utilization while reducing logistics expenses by $900K/year.",
@@ -116,6 +115,7 @@ export const experience: Role[] = [
     period: "Nov 2016 – Sep 2020",
     duration: "3 yrs 11 mos",
     product: "Claims Management & Insurance Operations Platform",
+    skills: ["Python", "JavaScript", "PostgreSQL", "Redis", "AWS", "REST APIs", "Data Migration"],
     bullets: [
       "Contributed to SuscoCMS, building scalable claims-management workflows, APIs, integrations, and business applications using Python, JavaScript, PostgreSQL, Redis, and AWS.",
       "Architected backend services, data models, REST APIs, and automated workflows supporting claims processing, billing, adjuster management, and insurance operations.",
@@ -133,8 +133,9 @@ export const experience: Role[] = [
     period: "Jan 2014 – Oct 2016",
     duration: "2 yrs 10 mos",
     product: "Construction Lien Rights & Payment Management Platform",
+    skills: ["Python", "Django", "JavaScript/jQuery", "PostgreSQL", "Redis", "AWS"],
     bullets: [
-      "Contributed to the development of Levelset’s core construction payment platform using Python, Django, JavaScript/jQuery, PostgreSQL, Redis, and AWS.",
+      "Contributed to the development of Levelset's core construction payment platform using Python, Django, JavaScript/jQuery, PostgreSQL, Redis, and AWS.",
       "Built full-stack workflows for lien notices, lien waivers, payment tracking, document processing, and compliance deadlines.",
       "Developed scalable backend services, APIs, database models, and automated workflows supporting construction payment operations.",
       "Optimized application performance through PostgreSQL query optimization, Redis caching/background processing, and AWS infrastructure.",
@@ -148,6 +149,7 @@ export const experience: Role[] = [
     period: "Mar 2010 – Dec 2013",
     duration: "3 yrs 10 mos",
     product: "Managed IT, Infrastructure & Custom Software Solutions",
+    skills: ["C#/.NET", "ASP.NET", "SQL Server", "RESTful Services", "Cloud Migration"],
     bullets: [
       "Led custom web application development and database modernization using C#/.NET, ASP.NET, and SQL Server for enterprise and public-sector clients.",
       "Architected RESTful services and data portals supporting high-volume operational workflows and geographically distributed users.",
@@ -164,6 +166,7 @@ export const experience: Role[] = [
     period: "Aug 2007 – Feb 2010",
     duration: "2 yrs 7 mos",
     product: "Custom Software, E-Commerce & Web Application Development",
+    skills: ["PHP", "JavaScript", "HTML/CSS", "MySQL", "API Integrations"],
     bullets: [
       "Built custom web applications and e-commerce platforms using PHP, JavaScript, HTML/CSS, and MySQL.",
       "Developed backend business logic, database-driven features, customer portals, and administrative tools for client applications.",
@@ -180,6 +183,7 @@ export const experience: Role[] = [
     period: "Jun 2005 – Jul 2007",
     duration: "2 yrs 2 mos",
     product: "Managed IT Infrastructure & Business Technology Solutions",
+    skills: ["C#", "SQL Server", "JavaScript", "Network Monitoring", "Automation Scripting"],
     bullets: [
       "Developed internal tracking dashboards and automation tools using C#, SQL Server, and JavaScript to streamline IT operations.",
       "Built custom scripts and integrations for network monitoring, log processing, infrastructure tracking, and uptime reporting.",
@@ -187,8 +191,6 @@ export const experience: Role[] = [
     ],
   },
 ];
-
-export type WorkMetric = { value: string; label: string };
 
 export type WorkItem = {
   slug: string;
@@ -202,7 +204,7 @@ export type WorkItem = {
   period: string;
   stack: string[];
   summary: string;
-  metrics: WorkMetric[];
+  metrics: string[];
   highlights: string[];
 };
 
@@ -222,9 +224,9 @@ export const selectedWork: WorkItem[] = [
     summary:
       "A high-concurrency API gateway that sits in front of every content-AI provider a team uses, deduplicates identical work, and routes each request to whichever provider is cheapest and healthiest at that moment. Teams keep one SDK and stop paying twice for the same generation.",
     metrics: [
-      { value: "30–50%", label: "vendor spend removed" },
-      { value: "1", label: "SDK across all providers" },
-      { value: "BYOK", label: "and managed plans" },
+      "30–50% of vendor spend removed",
+      "One SDK across all providers",
+      "Managed and bring-your-own-key plans",
     ],
     highlights: [
       "Architected the gateway in TypeScript, Go, and Redis to aggregate and route requests across content-AI providers under high concurrency.",
@@ -234,120 +236,97 @@ export const selectedWork: WorkItem[] = [
     ],
   },
   {
-    slug: "breezy-ai-advisor",
-    tag: "FOUNDING ENGINEER",
-    metric: "+$11M valuation",
-    title: "Breezy AI Advisor",
+    slug: "breezy-intelligence",
+    tag: "LEAD AI / SENIOR SOFTWARE ENGINEER",
+    metric: "AI-powered candidate intelligence, shipped to production",
+    title: "Breezy Intelligence",
     description:
-      "Agentic recommendation system with tool-calling that reads client books and surfaces financial moves.",
-    role: "AI Product Engineer",
+      "An AI intelligence layer embedded in a production recruiting platform. It parses resumes, cross-references job requirements and recruiting activity, and surfaces contextual insights recruiters can act on with human-in-the-loop checks and resume-integrity screening to catch AI-generated or suspicious applications.",
+    role: "Lead AI / Senior Software Engineer",
     period: "Sep 2023 – Jun 2026",
-    stack: ["TypeScript", "Python", "LLM tool-calling", "RAG", "PostgreSQL"],
+    stack: ["LLM Pipelines", "Agentic Workflows", "API Integrations", "Observability", "Data Validation"],
     summary:
-      "An agentic advisor that reads a client’s books, decides which tools to call, and surfaces the financial moves worth making. It carried the company from a $4M to a $15M valuation in nine months, built as the sole founding engineer.",
+      "An AI intelligence layer embedded in a production recruiting platform. It parses resumes, cross-references job requirements and recruiting activity, and surfaces contextual insights recruiters can act on with human-in-the-loop checks and resume-integrity screening to catch AI-generated or suspicious applications.",
     metrics: [
-      { value: "$4M → $15M", label: "valuation in 9 months" },
-      { value: "1", label: "founding engineer" },
-      { value: "Agentic", label: "tool-calling core" },
+      "Sole technical architect of the AI layer, end to end",
+      "Agentic workflows with structured outputs, validation & orchestration",
+      "Contextual summarization across resumes, notes, and activity history",
     ],
     highlights: [
-      "Sole founding engineer: owned architecture, delivery, and production operations end to end.",
-      "Built the agentic recommendation loop with tool-calling over live client financial data.",
-      "Grew company valuation from $4M to $15M in nine months on the back of the shipped product.",
+      "Owned architecture and delivery of an LLM-powered candidate intelligence system inside a live SaaS product.",
+      "Designed agentic workflows with structured outputs and human-in-the-loop review to make AI signals trustworthy enough to act on.",
+      "Built async processing, observability, and data-validation layers to run AI workloads reliably at scale.",
     ],
   },
   {
-    slug: "carvana-logistics-engine",
-    tag: "CONTRACT",
-    metric: "$900K/yr saved",
-    title: "Carvana Logistics Engine",
+    slug: "carvana-logistics-vehicle-intelligence",
+    tag: "SENIOR FULL-STACK ENGINEER (CONTRACT)",
+    metric: "$22.9M/year in measurable business impact",
+    title: "Carvana Logistics & Vehicle Intelligence",
     description:
-      "Last-mile scheduling system optimizing driver routes and transport schedules nationwide.",
-    role: "AI Engineer (Contract)",
+      "A distributed last-mile scheduling platform and set of ML/LLM-driven vehicle intelligence tools for a high-volume automotive commerce platform covering routing, inventory, pricing, and fulfillment.",
+    role: "Senior Full-Stack Engineer (Contract)",
     period: "Oct 2020 – Sep 2023",
-    stack: ["Python", "ML routing", "PostgreSQL", "AWS"],
+    stack: ["Python", "Go", "Redis", "Event-Driven Processing", "Classical ML", "LLM Integration"],
     summary:
-      "A nationwide last-mile scheduler that plans driver routes and transport windows against real constraints: vehicle availability, delivery promises, and driver hours. It replaces manual dispatch decisions with optimized ones.",
+      "A distributed last-mile scheduling platform and set of ML/LLM-driven vehicle intelligence tools for a high-volume automotive commerce platform covering routing, inventory, pricing, and fulfillment.",
     metrics: [
-      { value: "$900K", label: "saved per year" },
-      { value: "Nationwide", label: "delivery coverage" },
-      { value: "Last-mile", label: "route optimization" },
+      "$22.9M/year in measurable business impact",
+      "$900K/year cut from logistics expenses",
+      "3 years leading cross-functional technical initiatives",
     ],
     highlights: [
-      "Built the routing and scheduling engine behind nationwide last-mile delivery.",
-      "Optimized driver routes and transport schedules against live capacity constraints.",
-      "Cut roughly $900K/year out of logistics cost through better scheduling decisions.",
+      "Architected a distributed scheduling platform (Python, Go, Redis) optimizing driver routing and network capacity.",
+      "Connected vehicle inventory, demand, pricing, and fulfillment into a single data-driven backend.",
+      "Built ML-driven valuation, recommendation, and inventory-optimization tools from large-scale transaction data.",
     ],
   },
   {
-    slug: "susco-modernization",
-    tag: "TEAM LEAD",
-    metric: "40% fewer defects",
-    title: "Susco Modernization",
+    slug: "suscocms-claims-management",
+    tag: "SENIOR FULL-STACK ENGINEER",
+    metric: "$348K in annual cost savings",
+    title: "SuscoCMS Claims Management Platform",
     description:
-      "Led 10+ engineers rebuilding legacy portals with strict typing, CI/CD, and real-time GraphQL.",
+      "A claims-management system for insurance operations claims processing, billing, and adjuster workflows including a full legacy-platform replacement for a major client.",
     featured: true,
     image: "/work-platform.jpg",
-    role: "Tech Lead & Principal Full-Stack Engineer",
+    role: "Senior Full-Stack Engineer",
     period: "Nov 2016 – Sep 2020",
-    stack: ["TypeScript", "React", "GraphQL", "CI/CD", "PostgreSQL"],
+    stack: ["Python", "JavaScript", "PostgreSQL", "Redis", "AWS"],
     summary:
-      "A multi-year rebuild of legacy client portals, run with a team of ten-plus engineers. Strict typing, real CI/CD, and real-time GraphQL replaced ad-hoc code and manual releases, and production defects fell by 40%.",
+      "A claims-management system for insurance operations claims processing, billing, and adjuster workflows including a full legacy-platform replacement for a major client.",
     metrics: [
-      { value: "40%", label: "fewer production defects" },
-      { value: "10+", label: "engineers led" },
-      { value: "4 yrs", label: "of platform ownership" },
+      "$348K/year in reported cost savings",
+      "Full migration off a legacy Vertafore Sagitta system",
+      "4 years owning backend architecture and delivery",
     ],
     highlights: [
-      "Led a team of 10+ engineers through a full legacy-to-modern portal rebuild.",
-      "Introduced strict typing standards and CI/CD pipelines as team-wide defaults.",
-      "Moved client-facing data to real-time GraphQL, cutting production defect rates 40%.",
+      "Architected backend services, data models, and REST APIs for claims processing and billing.",
+      "Led the Gilsbar Insurance engagement, replacing a legacy platform with custom-built accounting software.",
+      "Designed the data migration path, preserving integrity and production continuity throughout.",
     ],
   },
   {
-    slug: "vehicle-visualizer",
-    tag: "WEBGL",
-    metric: "+$22M/yr",
-    title: "Vehicle Visualizer",
+    slug: "levelset-construction-payments",
+    tag: "SENIOR FULL-STACK DEVELOPER",
+    metric: "Core payments infrastructure for the construction industry",
+    title: "Levelset Construction Payment Platform",
     description:
-      "Interactive React/WebGL vehicle visualizer built to lift conversion on Carvana’s storefront.",
-    role: "AI Engineer (Contract)",
-    period: "Oct 2020 – Sep 2023",
-    stack: ["React", "WebGL", "TypeScript"],
-    summary:
-      "An interactive WebGL vehicle viewer on the storefront: shoppers rotate, inspect, and configure a real car in the browser before buying. Part of the ML and LLM work that contributed $22.9M/year in business impact.",
-    metrics: [
-      { value: "$22M/yr", label: "business impact" },
-      { value: "WebGL", label: "in-browser rendering" },
-      { value: "Storefront", label: "conversion surface" },
-    ],
-    highlights: [
-      "Built the interactive React/WebGL vehicle visualizer for the consumer storefront.",
-      "Tuned rendering for conversion on the highest-traffic surface in the funnel.",
-      "Contributed to $22.9M/year in measured business impact across the platform.",
-    ],
-  },
-  {
-    slug: "levelset-document-pipeline",
-    tag: "SCALE",
-    metric: "60% faster",
-    title: "Levelset Document Pipeline",
-    description:
-      "Async processing pipeline for legal and title documents, backed by indexed Postgres and Celery/Redis.",
+      "The lien-rights and payment-management platform behind Levelset handling lien notices, waivers, payment tracking, and compliance deadlines for construction businesses nationwide.",
     role: "Senior Full-Stack Developer",
-    period: "Jan 2014 – Oct 2016",
-    stack: ["Python", "Celery", "Redis", "PostgreSQL"],
+    period: "Jan 2014 – Oct 2016 (acquired by Procore)",
+    stack: ["Python", "Django", "JavaScript/jQuery", "PostgreSQL", "Redis", "AWS"],
     summary:
-      "Legal and title documents used to process synchronously and slowly. Moving the work onto Celery and Redis with a properly indexed Postgres schema made the whole pipeline 60% faster and let it absorb load spikes without user-visible delay.",
+      "The lien-rights and payment-management platform behind Levelset handling lien notices, waivers, payment tracking, and compliance deadlines for construction businesses nationwide.",
     metrics: [
-      { value: "60%", label: "faster processing" },
-      { value: "Async", label: "Celery + Redis queue" },
-      { value: "Indexed", label: "Postgres schema" },
+      "Nearly 3 years on the platform's core payment workflows",
+      "Company later acquired by Procore",
+      "Backend + full-stack ownership across the product",
     ],
     highlights: [
-      "Rebuilt legal and title document processing as an async, queue-backed pipeline.",
-      "Indexed the Postgres schema around the real query patterns driving the slowdowns.",
-      "Sped up end-to-end document processing by 60%.",
+      "Built full-stack workflows for lien notices, waivers, and compliance deadline tracking.",
+      "Developed scalable backend services, APIs, and database models for construction payment operations.",
+      "Optimized performance through PostgreSQL query tuning and Redis caching.",
     ],
   },
 ];
