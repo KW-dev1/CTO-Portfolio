@@ -7,13 +7,14 @@ import { ThemeToggle } from "@/components/theme-toggle";
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", variable: "--font-serif" });
 
-const title = `${profile.name} | ${profile.title}`;
-const description = aboutBody.join(" ");
+const title = profile.name;
+const description = `${aboutBody.join(" ")} ${profile.title} based in ${profile.location}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
   description,
+  authors: [{ name: profile.name, url: siteUrl }],
   alternates: { canonical: "/" },
   openGraph: {
     title,

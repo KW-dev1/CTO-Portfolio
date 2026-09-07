@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { selectedWork } from "@/content/data";
+import { profile, selectedWork } from "@/content/data";
 import { Reveal } from "@/components/reveal";
 
 type Params = { params: Promise<{ slug: string }> };
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const item = selectedWork.find((w) => w.slug === slug);
   if (!item) return {};
-  const title = `${item.title} | Selected work`;
+  const title = `${item.title} | ${profile.name}`;
   return {
     title,
     description: item.description,
