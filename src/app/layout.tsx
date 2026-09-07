@@ -10,6 +10,18 @@ const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", variable: "-
 export const metadata: Metadata = {
   title: `${profile.name} | ${profile.title}`,
   description: aboutBody.join(" "),
+  openGraph: {
+    title: `${profile.name} | ${profile.title}`,
+    description: aboutBody.join(" "),
+    images: ["/headshot.jpg"],
+    type: "profile",
+  },
+  twitter: {
+    card: "summary",
+    title: `${profile.name} | ${profile.title}`,
+    description: aboutBody.join(" "),
+    images: ["/headshot.jpg"],
+  },
 };
 
 const noFlash = `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light"){document.documentElement.dataset.theme=t}}catch(e){}})();`;

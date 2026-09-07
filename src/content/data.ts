@@ -4,12 +4,13 @@ export const profile = {
   subtitle: "Tech Lead",
   location: "Louisiana, USA",
   availability: "Open to Remote",
-  yearsLabel: "21+ Years of Experience",
   years: "21+",
   yearsCaption: "Years of Experience",
   email: "hello@kennethwebber.dev",
   linkedin: "https://www.linkedin.com/in/kenneth-webber-a16032423/",
+  linkedinHandle: "in/kenneth-webber",
   github: "https://github.com/kw-dev1",
+  githubHandle: "@kw-dev1",
 };
 
 export const aboutBody: string[] = [

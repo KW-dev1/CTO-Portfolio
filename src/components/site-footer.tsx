@@ -2,8 +2,8 @@ import { profile } from "@/content/data";
 import { Reveal } from "@/components/reveal";
 
 const links = [
-  { label: "GitHub", handle: "@kw-dev1", href: profile.github },
-  { label: "LinkedIn", handle: "in/kenneth-webber", href: profile.linkedin },
+  { label: "GitHub", handle: profile.githubHandle, href: profile.github },
+  { label: "LinkedIn", handle: profile.linkedinHandle, href: profile.linkedin },
   { label: "Email", handle: profile.email, href: `mailto:${profile.email}` },
 ];
 
