@@ -1,3 +1,5 @@
+export const siteUrl = "https://kennethwebber.com";
+
 export const profile = {
   name: "Kenneth Webber",
   title: "Senior AI & Full-Stack Engineer",
