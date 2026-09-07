@@ -17,8 +17,11 @@ export const aboutBody: string[] = [
   "Legacy platforms nobody wants to touch. AI features that work in the demo but not in production. Logistics systems quietly bleeding money. I’ve rebuilt all three — and I’m currently building something of my own, because I got tired of just fixing other people’s.",
 ];
 
-export const quote =
-  "Most engineers can write code. Fewer can tell you which code is actually worth writing.";
+export const quote = {
+  text:
+    "Most engineers can write code. Fewer can tell you which code is actually worth writing.",
+  attribution: "— Kenneth Webber",
+};
 
 export type StackGroup = { label: string; items: string };
 
@@ -91,7 +94,7 @@ export const experience: Role[] = [
   },
   {
     slug: "carvana",
-    title: "Senior Full-Stack Engineer (Contract)",
+    title: "Senior Full-Stack Engineer",
     company: "Carvana",
     initial: "C",
     period: "Oct 2020 – Sep 2023",
@@ -260,12 +263,12 @@ export const selectedWork: WorkItem[] = [
   },
   {
     slug: "carvana-logistics-vehicle-intelligence",
-    tag: "SENIOR FULL-STACK ENGINEER (CONTRACT)",
+    tag: "SENIOR FULL-STACK ENGINEER",
     metric: "$22.9M/year in measurable business impact",
     title: "Carvana Logistics & Vehicle Intelligence",
     description:
       "A distributed last-mile scheduling platform and set of ML/LLM-driven vehicle intelligence tools for a high-volume automotive commerce platform covering routing, inventory, pricing, and fulfillment.",
-    role: "Senior Full-Stack Engineer (Contract)",
+    role: "Senior Full-Stack Engineer",
     period: "Oct 2020 – Sep 2023",
     stack: ["Python", "Go", "Redis", "Event-Driven Processing", "Classical ML", "LLM Integration"],
     summary:

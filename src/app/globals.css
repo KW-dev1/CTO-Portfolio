@@ -115,9 +115,11 @@ body {
   }
 
   .badge-on-dark {
-    @apply rounded-full px-2 py-1 text-[10.5px] uppercase tracking-[0.16em];
-    background: rgba(255, 255, 255, 0.18);
+    @apply rounded-full px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-[0.16em];
+    background: rgba(10, 10, 12, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.28);
     color: #fff;
+    backdrop-filter: blur(8px);
   }
 
   .btn-primary {
@@ -128,11 +130,13 @@ body {
   }
 
   .on-media {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
   }
 
   .on-media-strong {
     color: #fff;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
   }
 
   .theme-toggle {

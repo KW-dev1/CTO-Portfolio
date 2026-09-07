@@ -47,7 +47,7 @@ export function Hero() {
           y={16}
           scale={0.97}
           delay={200}
-          className="card col-span-3 md:col-span-2 row-span-2 flex flex-col justify-between overflow-hidden p-5"
+          className="card col-span-6 md:col-span-2 row-span-2 flex flex-col justify-between overflow-hidden p-5"
         >
           <div className="label">Where</div>
           <div>
@@ -60,7 +60,7 @@ export function Hero() {
           y={16}
           scale={0.97}
           delay={300}
-          className="card card-tint col-span-3 md:col-span-2 row-span-2 flex flex-col justify-between overflow-hidden p-5"
+          className="card card-tint col-span-6 md:col-span-2 row-span-2 flex flex-col justify-between overflow-hidden p-5"
         >
           <div className="label">Building</div>
           <div>
@@ -75,7 +75,7 @@ export function Hero() {
           y={16}
           scale={0.97}
           delay={400}
-          className="card col-span-3 md:col-span-2 row-span-2 flex flex-col justify-between overflow-hidden p-5"
+          className="card col-span-6 md:col-span-2 row-span-2 flex flex-col justify-between overflow-hidden p-5"
         >
           <div className="label">Experience</div>
           <div>

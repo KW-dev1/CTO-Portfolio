@@ -5,11 +5,10 @@ import { Reveal } from "@/components/reveal";
 
 const SPANS = [
   "lg:col-span-3 lg:row-span-2",
+  "lg:col-span-3 lg:row-span-2",
   "lg:col-span-2 lg:row-span-2",
-  "lg:col-span-2 lg:row-span-1",
   "lg:col-span-2 lg:row-span-2",
   "lg:col-span-2 lg:row-span-2",
-  "lg:col-span-2 lg:row-span-1",
 ];
 
 export function SelectedWork() {
@@ -19,18 +18,18 @@ export function SelectedWork() {
         <div className="label mb-3">Selected work</div>
         <h2 className="t-h2 mb-8">Systems that moved the needle.</h2>
 
-        <div className="grid grid-cols-2 lg:grid-cols-6 auto-rows-[160px] md:auto-rows-[200px] gap-3 md:gap-4">
+        <div className="grid grid-cols-1 gap-3 md:gap-4 lg:grid-cols-6 lg:auto-rows-[200px]">
           {selectedWork.map((item, i) => (
             <Reveal
               key={item.slug}
               delay={i * 100}
               y={14}
               scale={0.98}
-              className={`col-span-2 ${SPANS[i % SPANS.length]}`}
+              className={SPANS[i % SPANS.length]}
             >
               <Link
                 href={`/work/${item.slug}`}
-                className={`card group relative flex h-full flex-col justify-between overflow-hidden rounded-[28px] p-5 md:p-6 ${
+                className={`card group relative flex h-full min-h-[260px] flex-col justify-between gap-8 overflow-hidden rounded-[28px] p-5 md:p-6 lg:min-h-0 lg:gap-0 ${
                   item.featured ? "card-dark" : ""
                 }`}
               >
@@ -73,7 +72,7 @@ export function SelectedWork() {
                     {item.title}
                   </div>
                   <p
-                    className={`mt-1 line-clamp-2 text-[13.5px] leading-[1.45] ${
+                    className={`mt-1 text-[13.5px] leading-[1.45] lg:line-clamp-2 ${
                       item.featured ? "on-media" : "text-subtle"
                     }`}
                   >
