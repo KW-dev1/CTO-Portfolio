@@ -9,8 +9,8 @@ export const profile = {
   email: "hello@kennethwebber.dev",
   linkedin: "https://www.linkedin.com/in/kenneth-webber-a16032423/",
   linkedinHandle: "in/kenneth-webber",
-  github: "https://github.com/kw-dev1",
-  githubHandle: "@kw-dev1",
+  github: "https://github.com/KW-dev1",
+  githubHandle: "@KW-dev1",
 };
 
 export const aboutBody: string[] = [
