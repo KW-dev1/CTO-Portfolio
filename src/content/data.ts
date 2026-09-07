@@ -6,7 +6,7 @@ export const profile = {
   availability: "Open to Remote",
   years: "21+",
   yearsCaption: "Years of Experience",
-  email: "hello@kennethwebber.dev",
+  email: "contact@kennethwebber.com",
   linkedin: "https://www.linkedin.com/in/kenneth-webber-a16032423/",
   linkedinHandle: "in/kenneth-webber",
   github: "https://github.com/KW-dev1",

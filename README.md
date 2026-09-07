@@ -20,7 +20,7 @@ Open `http://localhost:3000`.
 
 ## Content
 
-All copy lives in `src/content/data.ts`. The email, LinkedIn, and GitHub links in `profile` are placeholders — replace them with real contact details before launch.
+All copy lives in `src/content/data.ts`.
 
 ## Production
 
