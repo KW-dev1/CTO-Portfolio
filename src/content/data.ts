@@ -197,7 +197,7 @@ export const experience: Role[] = [
 
 export type WorkItem = {
   slug: string;
-  tag: string;
+  tag?: string;
   metric: string;
   title: string;
   description: string;
@@ -214,7 +214,7 @@ export type WorkItem = {
 export const selectedWork: WorkItem[] = [
   {
     slug: "withconflux",
-    tag: "CURRENT",
+    tag: "Current",
     metric: "30–50% cost cut",
     title: "withConflux",
     description:
@@ -240,8 +240,8 @@ export const selectedWork: WorkItem[] = [
   },
   {
     slug: "breezy-intelligence",
-    tag: "LEAD AI / SENIOR SOFTWARE ENGINEER",
-    metric: "AI-powered candidate intelligence, shipped to production",
+    tag: "Tech Lead",
+    metric: "9+ Industry Awards",
     title: "Breezy Intelligence",
     description:
       "An AI intelligence layer embedded in a production recruiting platform. It parses resumes, cross-references job requirements and recruiting activity, and surfaces contextual insights recruiters can act on with human-in-the-loop checks and resume-integrity screening to catch AI-generated or suspicious applications.",
@@ -263,8 +263,8 @@ export const selectedWork: WorkItem[] = [
   },
   {
     slug: "carvana-logistics-vehicle-intelligence",
-    tag: "SENIOR FULL-STACK ENGINEER",
-    metric: "$22.9M/year in measurable business impact",
+    tag: "Backend/AI",
+    metric: "$22.9M/year",
     title: "Carvana Logistics & Vehicle Intelligence",
     description:
       "A distributed last-mile scheduling platform and set of ML/LLM-driven vehicle intelligence tools for a high-volume automotive commerce platform covering routing, inventory, pricing, and fulfillment.",
@@ -286,7 +286,7 @@ export const selectedWork: WorkItem[] = [
   },
   {
     slug: "suscocms-claims-management",
-    tag: "SENIOR FULL-STACK ENGINEER",
+    tag: "Backend",
     metric: "$348K in annual cost savings",
     title: "SuscoCMS Claims Management Platform",
     description:
@@ -311,8 +311,8 @@ export const selectedWork: WorkItem[] = [
   },
   {
     slug: "levelset-construction-payments",
-    tag: "SENIOR FULL-STACK DEVELOPER",
-    metric: "Core payments infrastructure for the construction industry",
+    tag: "Full Stack",
+    metric: "Nearly 3 years on core payment workflows",
     title: "Levelset Construction Payment Platform",
     description:
       "The lien-rights and payment-management platform behind Levelset handling lien notices, waivers, payment tracking, and compliance deadlines for construction businesses nationwide.",

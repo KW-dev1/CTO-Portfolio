@@ -67,8 +67,14 @@ export default async function WorkDetail({ params }: Params) {
                 />
               )}
               <div className="relative">
-                <span className={item.featured ? "badge-on-dark" : "badge"}>{item.tag}</span>
-                <h1 className={`t-hero mt-4 ${item.featured ? "on-media-strong" : "text-ink"}`}>
+                {item.tag && (
+                  <span className={item.featured ? "badge-on-dark" : "badge"}>{item.tag}</span>
+                )}
+                <h1
+                  className={`t-hero ${item.tag ? "mt-4" : ""} ${
+                    item.featured ? "on-media-strong" : "text-ink"
+                  }`}
+                >
                   {item.title}
                 </h1>
               </div>
