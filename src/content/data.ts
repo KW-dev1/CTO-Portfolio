@@ -1,15 +1,18 @@
+export const siteUrl = "https://kennethwebber.com";
+
 export const profile = {
   name: "Kenneth Webber",
   title: "Senior AI & Full-Stack Engineer",
   subtitle: "Tech Lead",
   location: "Louisiana, USA",
   availability: "Open to Remote",
-  yearsLabel: "21+ Years of Experience",
   years: "21+",
   yearsCaption: "Years of Experience",
-  email: "hello@kennethwebber.dev",
+  email: "contact@kennethwebber.com",
   linkedin: "https://www.linkedin.com/in/kenneth-webber-a16032423/",
-  github: "https://github.com/kw-dev1",
+  linkedinHandle: "in/kenneth-webber",
+  github: "https://github.com/KW-dev1",
+  githubHandle: "@KW-dev1",
 };
 
 export const aboutBody: string[] = [

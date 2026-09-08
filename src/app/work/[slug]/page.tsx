@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { selectedWork } from "@/content/data";
+import { profile, selectedWork } from "@/content/data";
 import { Reveal } from "@/components/reveal";
 
 type Params = { params: Promise<{ slug: string }> };
@@ -15,7 +15,25 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const item = selectedWork.find((w) => w.slug === slug);
   if (!item) return {};
-  return { title: `${item.title} | Selected work`, description: item.description };
+  const title = `${item.title} | ${profile.name}`;
+  return {
+    title,
+    description: item.description,
+    alternates: { canonical: `/work/${item.slug}` },
+    openGraph: {
+      title,
+      description: item.description,
+      url: `/work/${item.slug}`,
+      images: item.image ? [item.image] : undefined,
+      type: "article",
+    },
+    twitter: {
+      card: item.image ? "summary_large_image" : "summary",
+      title,
+      description: item.description,
+      images: item.image ? [item.image] : undefined,
+    },
+  };
 }
 
 export default async function WorkDetail({ params }: Params) {
