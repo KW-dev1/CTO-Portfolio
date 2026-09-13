@@ -17,13 +17,13 @@ export const profile = {
 
 export const aboutBody: string[] = [
   "I’ve spent 21 years fixing the problems no one wants to own.",
-  "Legacy platforms nobody wants to touch. AI features that work in the demo but not in production. Logistics systems quietly bleeding money. I’ve rebuilt all three — and I’m currently building something of my own, because I got tired of just fixing other people’s.",
+  "Legacy platforms nobody wants to touch. AI features that work in the demo but not in production. Logistics systems quietly bleeding money. I’ve rebuilt all three, and I’m currently building something of my own, because I got tired of just fixing other people’s.",
 ];
 
 export const quote = {
   text:
     "Most engineers can write code. Fewer can tell you which code is actually worth writing.",
-  attribution: "— Kenneth Webber",
+  attribution: "Kenneth Webber",
 };
 
 export type StackGroup = { label: string; items: string };
@@ -90,7 +90,7 @@ export const experience: Role[] = [
       "Migrated the image delivery/optimization stack (DNS cutover, URL rewrites, application changes), cutting monthly image infrastructure spend by approximately 97%.",
       "Implemented AvaTax-based tax collection across state tax codes, integrating with Stripe for accurate checkout and invoicing.",
       "Audited and corrected GDPR/CCPA consent workflows across candidate import paths, ensuring data privacy compliance across US and EU regions.",
-      "Contributed to a broad platform feature set — job postings, candidate management, applications, email/SMS communication, automation, scheduling, scoring, video interviews, reporting, and dozens of third-party API integrations — across the recruiting platform.",
+      "Contributed to a broad platform feature set (job postings, candidate management, applications, email/SMS communication, automation, scheduling, scoring, video interviews, reporting, and dozens of third-party API integrations) across the recruiting platform.",
       "Drove engineering decisions across AI infrastructure, backend services, data pipelines, security, scalability, and production reliability, balancing model capabilities with latency, cost, accuracy, and operational constraints.",
       "Partnered cross-functionally with product and engineering stakeholders to translate recruiting-domain requirements into production-grade AI capabilities while establishing the technical foundation for continued expansion of intelligent recruiting features.",
     ],
@@ -198,6 +198,10 @@ export const experience: Role[] = [
   },
 ];
 
+export type GalleryShot = { src: string; caption: string };
+
+export type VideoEmbed = { src: string; title: string; caption: string };
+
 export type WorkItem = {
   slug: string;
   tag?: string;
@@ -206,6 +210,8 @@ export type WorkItem = {
   description: string;
   featured?: boolean;
   image?: string;
+  gallery?: GalleryShot[];
+  videos?: VideoEmbed[];
   role: string;
   period: string;
   stack: string[];
@@ -223,7 +229,11 @@ export const selectedWork: WorkItem[] = [
     description:
       "Content-AI gateway with content-hash deduplication and cost-aware smart routing across providers.",
     featured: true,
-    image: "/work-gateway.png",
+    image: "/work/withconflux-1.png",
+    gallery: [
+      { src: "/work/withconflux-1.png", caption: "Product site: one API in front of every content-AI vendor" },
+      { src: "/work/withconflux-2.jpg", caption: "Backend architecture: dedup hashing, smart routing, vendor failover" },
+    ],
     role: "Co-Founder & Lead AI/Infrastructure Engineer",
     period: "Aug 2026 – Present",
     stack: ["TypeScript", "Go", "Redis", "Next.js", "Tailwind CSS", "TanStack Query"],
@@ -248,6 +258,26 @@ export const selectedWork: WorkItem[] = [
     title: "Breezy Intelligence",
     description:
       "An AI intelligence layer embedded in a production recruiting platform. It parses resumes, cross-references job requirements and recruiting activity, and surfaces contextual insights recruiters can act on with human-in-the-loop checks and resume-integrity screening to catch AI-generated or suspicious applications.",
+    image: "/work/breezy-1.png",
+    gallery: [
+      {
+        src: "/work/breezy-1.png",
+        caption:
+          "Backend architecture: ingestion, candidate insights, resume-integrity screening, human-in-the-loop review",
+      },
+    ],
+    videos: [
+      {
+        src: "https://player.vimeo.com/video/1139069700?h=76dfb0c218",
+        title: "Breezy Intelligence: product walkthrough",
+        caption: "Candidate insights and resume-integrity screening in the live platform",
+      },
+      {
+        src: "https://player.vimeo.com/video/1091194139?h=eb59bc16b4",
+        title: "Breezy Intelligence: AI layer in action",
+        caption: "Agentic workflows, structured outputs, and human-in-the-loop review",
+      },
+    ],
     role: "Lead AI / Senior Software Engineer",
     period: "Sep 2023 – Jun 2026",
     stack: ["LLM Pipelines", "Agentic Workflows", "API Integrations", "Observability", "Data Validation"],
@@ -271,6 +301,16 @@ export const selectedWork: WorkItem[] = [
     title: "Carvana Logistics & Vehicle Intelligence",
     description:
       "A distributed last-mile scheduling platform and set of ML/LLM-driven vehicle intelligence tools for a high-volume automotive commerce platform covering routing, inventory, pricing, and fulfillment.",
+    image: "/work/carvana-1.png",
+    gallery: [
+      { src: "/work/carvana-1.png", caption: "Storefront: personalized shopping and purchase continuation" },
+      { src: "/work/carvana-2.png", caption: "Vehicle detail page: 360° tour, pricing, and fulfillment terms" },
+      { src: "/work/carvana-3.jpg", caption: "Mobile flows: filtering, tax-credit eligibility, checkout" },
+      { src: "/work/carvana-4.avif", caption: "Vehicle valuation: value-over-time model and regional market trends" },
+      { src: "/work/carvana-5.jpg", caption: "Platform architecture: routing, fulfillment, pricing, ML/LLM layer" },
+      { src: "/work/carvana-6.jpg", caption: "Event-driven backend, vehicle lifecycle state machine, telematics pipeline" },
+      { src: "/work/carvana-7.jpg", caption: "Internal tools: dispatch console, reconditioning triage, fleet telemetry, sourcing" },
+    ],
     role: "Senior Full-Stack Engineer",
     period: "Oct 2020 – Sep 2023",
     stack: ["Python", "Go", "Redis", "Event-Driven Processing", "Classical ML", "LLM Integration"],
@@ -295,7 +335,12 @@ export const selectedWork: WorkItem[] = [
     description:
       "A claims-management system for insurance operations claims processing, billing, and adjuster workflows including a full legacy-platform replacement for a major client.",
     featured: true,
-    image: "/work-platform.jpg",
+    image: "/work/susco-1.jpg",
+    gallery: [
+      { src: "/work/susco-1.jpg", caption: "Operations command center, adjuster dispatch, roster compliance, billing" },
+      { src: "/work/susco-2.jpg", caption: "Claim dossier, field-adjuster mobile app, IA firm financials" },
+      { src: "/work/susco-3.jpg", caption: "Backend architecture: claims orchestration, integrations, analytics layer" },
+    ],
     role: "Senior Full-Stack Engineer",
     period: "Nov 2016 – Sep 2020",
     stack: ["Python", "JavaScript", "PostgreSQL", "Redis", "AWS"],
@@ -319,6 +364,21 @@ export const selectedWork: WorkItem[] = [
     title: "Levelset Construction Payment Platform",
     description:
       "The lien-rights and payment-management platform behind Levelset handling lien notices, waivers, payment tracking, and compliance deadlines for construction businesses nationwide.",
+    image: "/work/levelset-1.jpg",
+    gallery: [
+      {
+        src: "/work/levelset-1.jpg",
+        caption:
+          "Backend infrastructure: lien services, data persistence, integrations, scaling and deploy pipeline",
+      },
+    ],
+    videos: [
+      {
+        src: "https://www.youtube.com/embed/XCYnU6kNc88",
+        title: "Levelset Construction Payment Platform: walkthrough",
+        caption: "Lien notices, waivers, payment tracking, and compliance deadlines in the product",
+      },
+    ],
     role: "Senior Full-Stack Developer",
     period: "Jan 2014 – Oct 2016 (acquired by Procore)",
     stack: ["Python", "Django", "JavaScript/jQuery", "PostgreSQL", "Redis", "AWS"],
