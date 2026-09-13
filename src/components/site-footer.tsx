@@ -5,6 +5,12 @@ const links = [
   { label: "GitHub", handle: profile.githubHandle, href: profile.github },
   { label: "LinkedIn", handle: profile.linkedinHandle, href: profile.linkedin },
   { label: "Email", handle: profile.email, href: `mailto:${profile.email}` },
+  {
+    label: "Resume",
+    handle: "Download PDF",
+    href: "/Kenneth_Webber_Resume.pdf",
+    download: true,
+  },
 ];
 
 export function SiteFooter() {
@@ -35,6 +41,7 @@ export function SiteFooter() {
                     href={link.href}
                     target={link.href.startsWith("mailto:") ? undefined : "_blank"}
                     rel="noopener noreferrer"
+                    download={link.download ? "" : undefined}
                     className="group flex items-baseline justify-between py-1 text-[14.5px]"
                   >
                     <span className="text-subtle">{link.label}</span>

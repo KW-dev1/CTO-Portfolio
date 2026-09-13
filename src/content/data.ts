@@ -210,6 +210,8 @@ export type WorkItem = {
   description: string;
   featured?: boolean;
   image?: string;
+  /** Modal banner; falls back to the card image when unset. */
+  bannerImage?: string;
   gallery?: GalleryShot[];
   videos?: VideoEmbed[];
   role: string;
@@ -229,7 +231,7 @@ export const selectedWork: WorkItem[] = [
     description:
       "Content-AI gateway with content-hash deduplication and cost-aware smart routing across providers.",
     featured: true,
-    image: "/work/withconflux-1.png",
+    image: "/work-gateway.png",
     gallery: [
       { src: "/work/withconflux-1.png", caption: "Product site: one API in front of every content-AI vendor" },
       { src: "/work/withconflux-2.jpg", caption: "Backend architecture: dedup hashing, smart routing, vendor failover" },
@@ -258,7 +260,8 @@ export const selectedWork: WorkItem[] = [
     title: "Breezy Intelligence",
     description:
       "An AI intelligence layer embedded in a production recruiting platform. It parses resumes, cross-references job requirements and recruiting activity, and surfaces contextual insights recruiters can act on with human-in-the-loop checks and resume-integrity screening to catch AI-generated or suspicious applications.",
-    image: "/work/breezy-1.png",
+    image: "/breezy.png",
+    bannerImage: "/breezy-project.png",
     gallery: [
       {
         src: "/work/breezy-1.png",
@@ -301,7 +304,7 @@ export const selectedWork: WorkItem[] = [
     title: "Carvana Logistics & Vehicle Intelligence",
     description:
       "A distributed last-mile scheduling platform and set of ML/LLM-driven vehicle intelligence tools for a high-volume automotive commerce platform covering routing, inventory, pricing, and fulfillment.",
-    image: "/work/carvana-1.png",
+    image: "/carvana2.png",
     gallery: [
       { src: "/work/carvana-1.png", caption: "Storefront: personalized shopping and purchase continuation" },
       { src: "/work/carvana-2.png", caption: "Vehicle detail page: 360° tour, pricing, and fulfillment terms" },
@@ -335,7 +338,8 @@ export const selectedWork: WorkItem[] = [
     description:
       "A claims-management system for insurance operations claims processing, billing, and adjuster workflows including a full legacy-platform replacement for a major client.",
     featured: true,
-    image: "/work/susco-1.jpg",
+    image: "/susco.png",
+    bannerImage: "/susco-banner.png",
     gallery: [
       { src: "/work/susco-1.jpg", caption: "Operations command center, adjuster dispatch, roster compliance, billing" },
       { src: "/work/susco-2.jpg", caption: "Claim dossier, field-adjuster mobile app, IA firm financials" },
@@ -364,7 +368,7 @@ export const selectedWork: WorkItem[] = [
     title: "Levelset Construction Payment Platform",
     description:
       "The lien-rights and payment-management platform behind Levelset handling lien notices, waivers, payment tracking, and compliance deadlines for construction businesses nationwide.",
-    image: "/work/levelset-1.jpg",
+    image: "/levelset.png",
     gallery: [
       {
         src: "/work/levelset-1.jpg",

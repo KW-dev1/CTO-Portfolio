@@ -303,6 +303,54 @@ body {
   margin-right: 0;
 }
 
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  z-index: 2;
+  display: flex;
+  height: 48px;
+  width: 48px;
+  transform: translateY(-50%);
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.lightbox-nav-prev {
+  left: 20px;
+}
+
+.lightbox-nav-next {
+  right: 20px;
+}
+
+@media (max-width: 640px) {
+  .lightbox-nav {
+    height: 40px;
+    width: 40px;
+  }
+
+  .lightbox-nav-prev {
+    left: 10px;
+  }
+
+  .lightbox-nav-next {
+    right: 10px;
+  }
+}
+
 @keyframes modal-fade {
   from {
     opacity: 0;

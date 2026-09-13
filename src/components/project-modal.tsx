@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import type { GalleryShot, WorkItem } from "@/content/data";
+import type { WorkItem } from "@/content/data";
 
 export function ProjectModal({
   items,
@@ -16,7 +16,7 @@ export function ProjectModal({
   onNavigate: (index: number) => void;
 }) {
   const panelRef = useRef<HTMLDivElement>(null);
-  const [zoomed, setZoomed] = useState<GalleryShot | null>(null);
+  const [zoomedIndex, setZoomedIndex] = useState<number | null>(null);
   const open = index !== null;
 
   const step = useCallback(
@@ -27,16 +27,32 @@ export function ProjectModal({
     [index, items.length, onNavigate]
   );
 
+  const stepZoom = useCallback(
+    (delta: number) => {
+      if (index === null) return;
+      const shots = items[index].gallery;
+      if (!shots || shots.length < 2) return;
+      setZoomedIndex((current) =>
+        current === null ? current : (current + delta + shots.length) % shots.length
+      );
+    },
+    [index, items]
+  );
+
   useEffect(() => {
     if (!open) return;
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        if (zoomed) setZoomed(null);
+        if (zoomedIndex !== null) setZoomedIndex(null);
         else onClose();
         return;
       }
-      if (zoomed) return;
+      if (zoomedIndex !== null) {
+        if (event.key === "ArrowRight") stepZoom(1);
+        if (event.key === "ArrowLeft") stepZoom(-1);
+        return;
+      }
       if (event.key === "ArrowRight") step(1);
       if (event.key === "ArrowLeft") step(-1);
     };
@@ -52,10 +68,10 @@ export function ProjectModal({
       document.body.style.overflow = overflow;
       document.body.style.paddingRight = paddingRight;
     };
-  }, [open, onClose, step, zoomed]);
+  }, [open, onClose, step, stepZoom, zoomedIndex]);
 
   useEffect(() => {
-    setZoomed(null);
+    setZoomedIndex(null);
     if (!open) return;
     panelRef.current?.scrollTo({ top: 0 });
     panelRef.current?.focus({ preventScroll: true });
@@ -66,7 +82,10 @@ export function ProjectModal({
   const item = items[index];
   const next = items[(index + 1) % items.length];
   const prev = items[(index - 1 + items.length) % items.length];
-  const onMedia = Boolean(item.image);
+  const banner = item.bannerImage ?? item.image;
+  const shots = item.gallery ?? [];
+  const zoomed = zoomedIndex === null ? null : shots[zoomedIndex];
+  const onMedia = Boolean(banner);
 
   return (
     <div
@@ -89,10 +108,10 @@ export function ProjectModal({
               item.featured ? "card-dark" : ""
             }`}
           >
-            {item.image && (
+            {banner && (
               <>
                 <Image
-                  src={item.image}
+                  src={banner}
                   alt={item.title}
                   fill
                   sizes="(min-width: 768px) 66vw, 100vw"
@@ -198,24 +217,24 @@ export function ProjectModal({
                   item.gallery.length > 1 ? "sm:grid-cols-2" : ""
                 }`}
               >
-                {item.gallery.map((shot) => (
-                  <figure key={shot.src} className="tile overflow-hidden">
+                {item.gallery.map((shot, shotIndex) => (
+                  <figure key={shot.src} className="tile flex h-full flex-col overflow-hidden">
                     <button
                       type="button"
-                      onClick={() => setZoomed(shot)}
+                      onClick={() => setZoomedIndex(shotIndex)}
                       aria-label={`Enlarge: ${shot.caption}`}
-                      className="group block w-full cursor-zoom-in"
+                      className="group relative block w-full cursor-zoom-in bg-tint"
+                      style={{ aspectRatio: "16 / 9" }}
                     >
                       <Image
                         src={shot.src}
                         alt={shot.caption}
-                        width={1600}
-                        height={900}
+                        fill
                         sizes="(min-width: 768px) 50vw, 100vw"
-                        className="h-auto w-full bg-tint object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                        className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                       />
                     </button>
-                    <figcaption className="px-5 py-4 text-[13px] leading-[1.5] text-subtle">
+                    <figcaption className="mt-auto px-5 py-4 text-[13px] leading-[1.5] text-subtle">
                       {shot.caption}
                     </figcaption>
                   </figure>
@@ -283,17 +302,39 @@ export function ProjectModal({
           aria-modal="true"
           aria-label={zoomed.caption}
           onMouseDown={(event) => {
-            if (event.target === event.currentTarget) setZoomed(null);
+            if (event.target === event.currentTarget) setZoomedIndex(null);
           }}
         >
           <button
             type="button"
-            onClick={() => setZoomed(null)}
+            onClick={() => setZoomedIndex(null)}
             aria-label="Close image"
             className="modal-close lightbox-close"
           >
             <span aria-hidden="true">&times;</span>
           </button>
+
+          {shots.length > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={() => stepZoom(-1)}
+                aria-label="Previous image"
+                className="lightbox-nav lightbox-nav-prev"
+              >
+                <span aria-hidden="true">&#8592;</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => stepZoom(1)}
+                aria-label="Next image"
+                className="lightbox-nav lightbox-nav-next"
+              >
+                <span aria-hidden="true">&#8594;</span>
+              </button>
+            </>
+          )}
+
           <figure className="lightbox-figure">
             <Image
               src={zoomed.src}
@@ -305,6 +346,11 @@ export function ProjectModal({
             />
             <figcaption className="mt-3 text-center text-[13px] leading-[1.5] text-white/80">
               {zoomed.caption}
+              {shots.length > 1 && (
+                <span className="ml-2 text-white/50">
+                  {(zoomedIndex ?? 0) + 1} / {shots.length}
+                </span>
+              )}
             </figcaption>
           </figure>
         </div>

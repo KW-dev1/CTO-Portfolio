@@ -9,7 +9,7 @@ export function Hero() {
         <Reveal
           y={16}
           scale={0.97}
-          className="card col-span-6 md:col-span-4 row-span-3 flex flex-col justify-between gap-6 md:gap-0 overflow-hidden p-7 md:p-9 shadow-[0_12px_32px_-20px_rgba(0,0,0,0.15)]"
+          className="card relative col-span-6 md:col-span-4 row-span-3 flex flex-col justify-center overflow-hidden p-7 md:p-9 shadow-[0_12px_32px_-20px_rgba(0,0,0,0.15)]"
         >
           <div>
             <div className="text-[12px] uppercase tracking-[0.16em] text-muted mb-2">
@@ -20,7 +20,9 @@ export function Hero() {
               {profile.title} | {profile.subtitle}
             </p>
           </div>
-          <div className="text-[44px] leading-none text-accent">✶</div>
+          <div className="absolute bottom-7 left-7 text-[44px] leading-none text-accent md:bottom-9 md:left-9">
+            ✶
+          </div>
         </Reveal>
 
         <Reveal
@@ -30,7 +32,7 @@ export function Hero() {
           className="card relative col-span-6 row-span-4 md:col-span-2 md:row-span-3 overflow-hidden"
         >
           <Image
-            src="/headshot.jpg"
+            src="/profile2.jpeg"
             alt={profile.name}
             fill
             sizes="(min-width: 768px) 34vw, 100vw"
@@ -47,10 +49,10 @@ export function Hero() {
           y={16}
           scale={0.97}
           delay={200}
-          className="card col-span-6 md:col-span-2 row-span-2 flex flex-col justify-between overflow-hidden p-5"
+          className="card col-span-6 md:col-span-2 row-span-2 flex flex-col overflow-hidden p-5"
         >
           <div className="label">Where</div>
-          <div>
+          <div className="flex flex-1 flex-col justify-center">
             <div className="text-[1.5rem] font-medium tracking-[-0.02em]">{profile.location}</div>
             <div className="mt-0.5 text-[12px] text-subtle">{profile.availability}</div>
           </div>
@@ -60,10 +62,10 @@ export function Hero() {
           y={16}
           scale={0.97}
           delay={300}
-          className="card card-tint col-span-6 md:col-span-2 row-span-2 flex flex-col justify-between overflow-hidden p-5"
+          className="card card-tint col-span-6 md:col-span-2 row-span-2 flex flex-col overflow-hidden p-5"
         >
           <div className="label">Building</div>
-          <div>
+          <div className="flex flex-1 flex-col justify-center">
             <div className="text-[1.5rem] font-medium tracking-[-0.02em]">
               {selectedWork[0].title}
             </div>
@@ -75,10 +77,10 @@ export function Hero() {
           y={16}
           scale={0.97}
           delay={400}
-          className="card col-span-6 md:col-span-2 row-span-2 flex flex-col justify-between overflow-hidden p-5"
+          className="card col-span-6 md:col-span-2 row-span-2 flex flex-col overflow-hidden p-5"
         >
           <div className="label">Experience</div>
-          <div>
+          <div className="flex flex-1 flex-col justify-center">
             <div className="text-[2rem] font-medium leading-none tracking-[-0.025em]">
               {profile.years}
             </div>

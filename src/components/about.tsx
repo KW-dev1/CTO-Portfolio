@@ -19,11 +19,13 @@ export function About() {
 
         <Reveal
           delay={100}
-          className="card card-tint flex flex-col justify-between rounded-[28px] p-7 md:p-9"
+          className="card card-tint flex flex-col justify-center gap-4 rounded-[28px] p-7 md:p-9"
         >
           <div className="font-serif text-[2.25rem] leading-[0.9] text-accent">&#10077;</div>
-          <p className="font-serif text-[1.125rem] leading-snug text-ink">{quote.text}</p>
-          <div className="text-[12px] text-subtle">{quote.attribution}</div>
+          <p className="font-serif text-[1.5rem] leading-snug tracking-[-0.01em] text-ink md:text-[1.75rem]">
+            {quote.text}
+          </p>
+          <div className="text-[13px] text-subtle">{quote.attribution}</div>
         </Reveal>
       </div>
     </section>
