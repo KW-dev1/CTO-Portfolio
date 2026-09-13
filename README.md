@@ -28,5 +28,4 @@ All copy lives in `src/content/data.ts`.
 npm run build
 npm run start
 ```
-
 Ready for Vercel deployment: import the repository and keep the default Next.js settings.
