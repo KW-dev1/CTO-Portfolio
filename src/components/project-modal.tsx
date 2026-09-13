@@ -166,7 +166,7 @@ export function ProjectModal({
             <div className="mt-10 md:mt-12">
               <div className="label mb-3">Walkthrough</div>
               <h3 className="t-h2 mb-6">See it running</h3>
-              <div className="grid gap-3 md:gap-4">
+              <div className="grid gap-3 sm:grid-cols-2 md:gap-4">
                 {item.videos.map((video) => (
                   <figure key={video.src} className="tile overflow-hidden">
                     <div className="relative w-full bg-tint" style={{ aspectRatio: "16 / 9" }}>
