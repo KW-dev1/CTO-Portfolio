@@ -6,7 +6,7 @@ export const profile = {
   subtitle: "Tech Lead",
   location: "Louisiana, USA",
   availability: "Open to Remote",
-  years: "21+",
+  years: "16+",
   yearsCaption: "Years of Experience",
   email: "contact@kennethwebber.com",
   linkedin: "https://www.linkedin.com/in/kenneth-webber-a16032423/",
@@ -16,7 +16,7 @@ export const profile = {
 };
 
 export const aboutBody: string[] = [
-  "I’ve spent 21 years fixing the problems no one wants to own.",
+  "I’ve spent 16 years fixing the problems no one wants to own.",
   "Legacy platforms nobody wants to touch. AI features that work in the demo but not in production. Logistics systems quietly bleeding money. I’ve rebuilt all three, and I’m currently building something of my own, because I got tired of just fixing other people’s.",
 ];
 
@@ -96,6 +96,26 @@ export const experience: Role[] = [
     ],
   },
   {
+    slug: "brightwave",
+    title: "Technical Lead",
+    company: "Brightwave",
+    initial: "B",
+    period: "Jul 2024 – May 2026",
+    duration: "1 yr 11 mos",
+    product: "AI-Powered Financial Research & Agent Platform",
+    skills: ["LLM/RAG", "AI Agents", "Python", "TypeScript/Node.js", "Document Intelligence", "Vector Search", "APIs", "Cloud Infrastructure"],
+    bullets: [
+      "Led the architecture and development of Brightwave's AI-powered financial research platform for investment and research teams.",
+      "Built AI workflows that analyzed SEC filings, earnings transcripts, data-room documents, and other financial materials and turned them into structured research and decision-ready outputs.",
+      "Designed LLM/RAG pipelines for document ingestion, retrieval, analysis, summarization, and source-grounded responses with citations.",
+      "Developed multi-step AI agent workflows for due diligence, company research, document analysis, and recurring investment research tasks.",
+      "Built backend services and APIs supporting asynchronous research jobs, document processing, AI orchestration, and report generation.",
+      "Improved reliability and quality of LLM workflows through validation, retry handling, prompt optimization, and source verification.",
+      "Worked closely with product and engineering teams to turn complex financial research workflows into production AI features.",
+      "Drove technical decisions across AI architecture, backend services, data pipelines, integrations, scalability, and production reliability.",
+    ],
+  },
+  {
     slug: "carvana",
     title: "Senior Full-Stack Engineer",
     company: "Carvana",
@@ -149,7 +169,7 @@ export const experience: Role[] = [
   },
   {
     slug: "general-informatics",
-    title: "Senior Systems & Software Engineer",
+    title: "Software Engineer",
     company: "General Informatics",
     initial: "G",
     period: "Mar 2010 – Dec 2013",
@@ -162,38 +182,6 @@ export const experience: Role[] = [
       "Designed cloud and infrastructure modernization solutions, migrating legacy systems and databases to more scalable environments.",
       "Developed database-driven applications, integrations, and internal platforms that streamlined client operations and reduced infrastructure complexity.",
       "Partnered with clients to translate business and technical requirements into production-ready software and infrastructure solutions.",
-    ],
-  },
-  {
-    slug: "endertech",
-    title: "Full-Stack Software Engineer",
-    company: "Endertech",
-    initial: "E",
-    period: "Aug 2007 – Feb 2010",
-    duration: "2 yrs 7 mos",
-    product: "Custom Software, E-Commerce & Web Application Development",
-    skills: ["PHP", "JavaScript", "HTML/CSS", "MySQL", "API Integrations"],
-    bullets: [
-      "Built custom web applications and e-commerce platforms using PHP, JavaScript, HTML/CSS, and MySQL.",
-      "Developed backend business logic, database-driven features, customer portals, and administrative tools for client applications.",
-      "Designed and integrated APIs and third-party services to automate business workflows and connect external systems.",
-      "Optimized database queries and application performance while troubleshooting production issues across client platforms.",
-      "Managed end-to-end development, testing, deployment, and ongoing maintenance of web applications.",
-    ],
-  },
-  {
-    slug: "infotech-solutions",
-    title: "Software Engineer",
-    company: "InfoTECH Solutions",
-    initial: "I",
-    period: "Jun 2005 – Jul 2007",
-    duration: "2 yrs 2 mos",
-    product: "Managed IT Infrastructure & Business Technology Solutions",
-    skills: ["C#", "SQL Server", "JavaScript", "Network Monitoring", "Automation Scripting"],
-    bullets: [
-      "Developed internal tracking dashboards and automation tools using C#, SQL Server, and JavaScript to streamline IT operations.",
-      "Built custom scripts and integrations for network monitoring, log processing, infrastructure tracking, and uptime reporting.",
-      "Automated operational tasks and data collection to improve infrastructure visibility and reduce manual IT administration.",
     ],
   },
 ];
