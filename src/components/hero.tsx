@@ -32,7 +32,7 @@ export function Hero() {
           className="card relative col-span-6 row-span-4 md:col-span-2 md:row-span-3 overflow-hidden"
         >
           <Image
-            src="/profile2.jpeg"
+            src="/headshot.jpg"
             alt={profile.name}
             fill
             sizes="(min-width: 768px) 34vw, 100vw"
